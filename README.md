@@ -16,7 +16,7 @@ A dash-based frontend that interacts with a MySQL backend.
 
 4. Create a non-root account
 
-    create user 'reader'@'localhost' identified by '<PASSWORD>';
+    create user 'reader'@'localhost' identified by 'PASSWORD';
 
 5. Create a database with
 

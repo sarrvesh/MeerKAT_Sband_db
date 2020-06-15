@@ -13,4 +13,6 @@ From: ubuntu:18.04
       dash \
       dash-bootstrap-components \
       google-auth-oauthlib \
-      ipython
+      ipython \
+      peewee \
+      mysql-connector-python
