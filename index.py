@@ -5,6 +5,7 @@ from dash.dependencies import Input, Output, State
 import dash_html_components as html
 import overview_layout
 import invalid_layout
+import modify_layout
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.LUMEN])
 app.css.config.serve_locally = True
@@ -25,8 +26,10 @@ app.layout = html.Div([
 )
 def display_page(pathname):
     """Function to parse the URL and provide the correct content to display."""
-    if pathname == '/meerkatsdb/':
+    if pathname == '/overview/':
         layout = overview_layout.layout
+    elif pathname == '/modify/':
+        layout = modify_layout.layout
     else:
         layout = invalid_layout.layout
 
