@@ -24,7 +24,7 @@ A dash-based frontend that interacts with a MySQL backend.
 
 6. Create a table inside this database
 
-    CREATE TABLE meerkat (name varchar(20), obs_date DATE, status varchar(20));
+    CREATE TABLE meerkat (name varchar(20), coordinates varchar(20), calibrator varchar(20), obs_date DATE, status varchar(20));
 
 7. Give read and edit access to user reader
 
@@ -36,8 +36,16 @@ A dash-based frontend that interacts with a MySQL backend.
 
 ## Columns in the meerkat.meerkat table
 
-| Column name | Description      | MySQL type |
-| ----------- | ---------------- | ---------- |
-| name        | Pointing name    | varchar    |
-| obs_date    | Observation date | date       |
-| status      | Current status   | varchar    |
+| Column name | Description         | MySQL type |
+| ----------- | ------------------- | ---------- |
+| name        | Pointing name       | varchar    |
+| coordinates | Coordinates (J2000) | varchar    |
+| calibrator  | Calibrator name     | varchar    |
+| obs_date    | Observation date    | date       |
+| status      | Current status      | varchar    |
+
+## How to add a new column to meerkat.meerkat
+1. Login to MySQL as root.
+2. Add the new column with
+    USE meerkat;
+    ALTER TABLE meerkat ADD COLUMN calibrator varchar(20) AFTER name;

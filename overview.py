@@ -16,7 +16,7 @@ app.scripts.config.serve_locally = True
 # Setup the layout of the web interface
 #######################################
 app.layout = layout
-app.title = 'MeerKAT S-band database'
+app.title = 'MeerKAT S-band survey: overview'
 
 if __name__ == '__main__':
     app.run_server(debug=True, host='0.0.0.0', port=8053)
