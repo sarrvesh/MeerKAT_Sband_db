@@ -6,6 +6,7 @@ import dash_html_components as html
 import overview_layout
 import invalid_layout
 import modify_layout
+import front_layout
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.LUMEN])
 app.css.config.serve_locally = True
@@ -26,7 +27,9 @@ app.layout = html.Div([
 )
 def display_page(pathname):
     """Function to parse the URL and provide the correct content to display."""
-    if pathname == '/overview/':
+    if pathname == '/':
+        layout = front_layout.layout
+    elif pathname == '/overview/':
         layout = overview_layout.layout
     elif pathname == '/modify/':
         layout = modify_layout.layout
