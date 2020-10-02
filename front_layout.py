@@ -7,8 +7,7 @@ import dash_core_components as dcc
 ###############################################################################
 header = dbc.Row([
             html.H1('Welcome to the MeerKAT S-band survey website')
-            ], justify='center'
-         )
+         ])
 
 ###############################################################################
 # Define the individual cards
